@@ -1,0 +1,17 @@
+apiVersion: gateway.kyma-project.io/v2
+kind: APIRule
+metadata:
+  name: kfp-lesson
+  namespace: default
+spec:
+  hosts:
+    - kfp-lesson.c-49be535.kyma.ondemand.com
+  service:
+    name: kfp-lesson
+    namespace: default
+    port: 80
+  gateway: kyma-system/kyma-gateway
+  rules:
+    - path: /*
+      methods: ["GET", "HEAD"]
+      noAuth: true

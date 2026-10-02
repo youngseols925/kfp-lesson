@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kfp-lesson
+  namespace: default
+spec:
+  selector:
+    app: kfp-lesson
+  ports:
+    - port: 80
+      targetPort: 80
